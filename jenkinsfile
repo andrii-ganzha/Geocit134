@@ -9,7 +9,6 @@ stages {
                 }
         }
     }
-}
 stage ('ansible') {
     steps {
         script {
@@ -17,5 +16,6 @@ stage ('ansible') {
             sh "ansible-playbook playbook.yml"
         }
     }
+}
 }
 }
