@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+}
+stages {
+    stage("build") {
+        steps{
+            script { 
+                sh "mvn clean install"
+                }
+        }
+    }
+}
+stage ('ansible') {
+    steps {
+        script {
+            sh "cd Geocit_ansible"
+            sh "ansible-playbook playbook.yml"
+        }
+    }
+}
